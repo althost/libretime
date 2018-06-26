@@ -132,9 +132,10 @@ function checkCommandExists() {
 #    of the package that process is part of.
 # See https://unix.stackexchange.com/questions/196166/how-to-find-out-if-a-system-uses-sysv-upstart-or-systemd-initsystem
 has_systemd_init=false
-has_upstart_init=false
+has_upstart_init=true
 has_systemv_init=false
 function systemInitDetect() {
+    return 0
     verbose "\nDetecting init system type ..."
     # Get the path of the command where pid=1 following any symlinks
     pid_1_path=$(readlink --canonicalize -n /proc/1/exe)
