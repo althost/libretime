@@ -42,7 +42,7 @@ class EmbedController extends Zend_Controller_Action
         $this->view->player_style = $player_style;
 
         $stream = $request->getParam('stream');
-        $streamData = Application_Model_StreamSetting::getEnabledStreamData();
+        $streamData = Application_Model_StreamSetting::getEnabledStreamData(true);
         $availableMobileStreams = array();
         $availableDesktopStreams = array();
 
