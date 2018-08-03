@@ -1,4 +1,3 @@
-# Re-scan Watching folders
-# “At every 10th minute.” 
-*/10 * * * *	root /opt/start_watching.py
+# Re-scan Watching folders at every hour, starting at minute 15
+15 * * * *	www-data /opt/start_watching.py
 
