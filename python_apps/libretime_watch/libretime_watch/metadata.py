@@ -18,15 +18,11 @@ import types
 
 import libretime_watch
 
-
-# create empty dictionary 
-#database = {}
-
 #
 # analysing the file
 #
 def replay_gain (filename):
-   """Getting the replaygain via python-rplay"""
+   """Getting the replaygain via python-rgain"""
 
    EXE="replaygain"
 
@@ -37,15 +33,16 @@ def replay_gain (filename):
             rg_pos = results.find(filename_token, results.find("Calculating Replay Gain information")) + len(filename_token)
             db_pos = results.find(" dB", rg_pos)
             replaygain = results[rg_pos:db_pos]
-
    except OSError as e: # replaygain was not found
             logging.warn("Failed to run: %s - %s. %s" % (command[0], e.strerror, "Do you have python-rgain installed?"))
    except subprocess.CalledProcessError as e: # replaygain returned an error code
             logging.warn("%s %s %s", e.cmd, e.message, e.returncode)
    except Exception as e:
             logging.warn(e)
-
-   return replaygain
+   else:
+     return replaygain
+   # TODO DEFAULT
+   return 0
 
 def cue_points (filename, cue_in, cue_out):
    """Analyse file cue using silan
@@ -96,23 +93,18 @@ def analyse_file (filename,database):
 
    analyse_ok=False
    logging.info ("analyse Filename: "+filename)
-   #try to determin the filetype 
-   mime_check = magic.from_file(filename, mime=True)
-   database["mime"] = mime_check
-   # test
-   #f = MP3(filename)
-   #f= mutagen.FileType(filename)
-   #mime_mutagen = f.mime[0]
-   #logging.info (" mutagen: " +mime_mutagen )
    
+   #try to determin the filetype 
+   mime_check = magic.detect_from_filename(filename)
+   database["mime"] = mime_check.mime_type
    mime = MimeTypes()
    type, a = mime.guess_type(filename)
    logging.info ("mime_check :"+database["mime"]+ " mime: "+type)
-   #+" mutagen: " +mime_mutagen )
-   #
+
    database["ftype"] = "audioclip"
    database["filesize"] = os.path.getsize(filename) 
    database["import_status"]=0
+   
    #md5
    with open(filename, 'rb') as fh:
        m = hashlib.md5()
@@ -122,11 +114,17 @@ def analyse_file (filename,database):
               break
            m.update(data)
        database["md5"] = m.hexdigest()
+
    # MP3 file ?
    if database["mime"] in ['audio/mpeg','audio/mp3','application/octet-stream']:
+     logging.info("Es un MP3: {}".format(filename))
      try:
-       audio = EasyID3(filename)
-       database["track_title"]=audio['title'][0]
+       try:
+         audio = EasyID3(filename)
+         database["track_title"]=audio['title'][0]
+       except StandardError, err: # default title to filename
+         database["track_title"] = filename.split("/")[-1]
+         logging.warning('no title ID3 for '+filename)
        try:
          database["artist_name"]=audio['artist'][0]
        except StandardError, err:
@@ -135,18 +133,19 @@ def analyse_file (filename,database):
        try:
          database["genre"]=audio['genre'][0]
        except StandardError, err:
-         logging.debug('no genre ID3 for '+filename) 
+         logging.warning('no genre ID3 for '+filename) 
          database["genre"]= ""
        try:
          database["album_title"]=audio['album'][0]
        except StandardError, err:
-         logging.debug('no album title for '+filename) 
+         logging.warning('no album title for '+filename) 
          database["album_title"]= ""
        try:
          database["track_number"]=audio['tracknumber'][0]
        except StandardError, err:
-         logging.debug('no track_number for '+filename) 
+         logging.warning('no track_number for '+filename) 
          database["track_number"]= 0
+         
        # get data encoded into file
        f = MP3(filename)
        database["bit_rate"]=f.info.bitrate
@@ -157,7 +156,9 @@ def analyse_file (filename,database):
          database["length"] = str(track_length) #time.strftime("%H:%M:%S.%f", track_length)
          # Other fields for Airtime
          database["cueout"] = database["length"]
-         database["replay_gain"]=float(replay_gain(filename))
+         track_replay_gain = replay_gain(filename)
+         logging.info("REPLAY GAIN: {}".format(track_replay_gain))
+         database["replay_gain"]=float(track_replay_gain)
        database["cuein"]= "00:00:00.0"
        # get better (?) cuein, cueout using silan
        database["cuein"], database["cueout"] = cue_points (filename, database["cuein"], database["cueout"])
@@ -174,9 +175,12 @@ def analyse_file (filename,database):
        else:
             database["channels"] = f.info.channels
        analyse_ok=True
-
+       logging.info("Analyze OK: {}".format(filename))
+       
      except StandardError, err:
-          logging.error('Error ',str(err),filename) 
-          #print "Error: ",str(err),filename
+          logging.error("Error : {} -- {}".format(err, filename))
+   else:
+     logging.warning("NOT MP3: {}".format(filename))
+     # TODO Ogg Vorbis, Wav...
    return analyse_ok
 
