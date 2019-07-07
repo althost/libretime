@@ -115,7 +115,9 @@ def connect_database():
 def watch (dir_id, directory):
     timestamp = touch_timestamp()
     logging.info ("Start scanning directory "+directory+ " for new files since "+ timestamp)
+
     conn = connect_database()
+
     watch_dir=str(directory)
     len_watch_dir=len(watch_dir) 
     # so now scan all directories
@@ -139,6 +141,7 @@ def watch (dir_id, directory):
                 +" and directory = "+str(database["directory"]))
           except: 
             logging.warning ("I can't SELECT count(*) ... from cc_files")
+          
           row = cur.fetchone()
           # is there already a record
           if row[0] == 0:
@@ -146,6 +149,8 @@ def watch (dir_id, directory):
             database["utime"] = datetime.datetime.now()
             if airtime_md.analyse_file (curFilePath,database):
               insert_database (conn)
+            else:
+              logging.warning("Problematic file: {}".format(database["filepath"]))
           else :
 #            try:
 #              # look for mtime
@@ -163,7 +168,7 @@ def watch (dir_id, directory):
                database["utime"] = datetime.datetime.now()
                if airtime_md.analyse_file (curFilePath,database):
                  update_database (conn)
-    
+    #
     # close database session
     conn.close() 
     logging.info ("Scan finished..")
