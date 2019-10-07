@@ -201,10 +201,11 @@ class Application_Model_Preference
     public static function GetHeadTitle()
     {
         $title = self::getValue("station_name");
-        if (strlen($title) > 0)
-            $title .= " - ";
+        if (empty($title)) {
+            $title = PRODUCT_NAME;
+        }
 
-        return $title.PRODUCT_NAME;
+        return $title;
     }
 
     public static function SetHeadTitle($title, $view=null)
@@ -387,6 +388,26 @@ class Application_Model_Preference
         return $val === '1' ? true : false;
     }
 
+    public static function GetIntroPlaylist()
+    {
+        return self::getValue("intro_playlist");
+    }
+
+    public static function GetOutroPlaylist()
+    {
+        return self::getValue("outro_playlist");
+    }
+
+
+    public static function SetIntroPlaylist($playlist)
+    {
+        self::setValue("intro_playlist", $playlist);
+    }
+
+    public static function SetOutroPlaylist($playlist)
+    {
+        self::setValue("outro_playlist", $playlist);
+    }
 
     public static function SetPhone($phone)
     {
@@ -672,8 +693,6 @@ class Application_Model_Preference
         $outputArray['NUM_OF_SCHEDULED_PLAYLISTS'] = Application_Model_Schedule::getSchduledPlaylistCount();
         $outputArray['NUM_OF_PAST_SHOWS'] = Application_Model_ShowInstance::GetShowInstanceCount(gmdate(DEFAULT_TIMESTAMP_FORMAT));
         $outputArray['UNIQUE_ID'] = self::GetUniqueId();
-        $outputArray['SAAS'] = self::GetPlanLevel();
-        $outputArray['TRIAL_END_DATE'] = self::GetTrialEndingDate();
         $outputArray['INSTALL_METHOD'] = self::GetInstallMethod();
         $outputArray['NUM_OF_STREAMS'] = self::GetNumOfStreams();
         $outputArray['STREAM_INFO'] = Application_Model_StreamSetting::getStreamInfoForDataCollection();
@@ -682,9 +701,6 @@ class Application_Model_Preference
 
         $outputString = "\n";
         foreach ($outputArray as $key => $out) {
-            if ($key == 'TRIAL_END_DATE' && ($out != '' || $out != 'NULL')) {
-                continue;
-            }
             if ($key == "STREAM_INFO") {
                 $outputString .= $key." :\n";
                 foreach ($out as $s_info) {
@@ -692,8 +708,6 @@ class Application_Model_Preference
                         $outputString .= "\t".strtoupper($k)." : ".$v."\n";
                     }
                 }
-            } elseif ($key == "SAAS") {
-                $outputString .= $key.' : '.$out."\n";
             } else {
                 $outputString .= $key.' : '.$out."\n";
             }
@@ -808,47 +822,6 @@ class Application_Model_Preference
         return self::getValue("max_bitrate");
     }
 
-    public static function SetPlanLevel($plan)
-    {
-        $oldPlanLevel = self::GetPlanLevel();
-        self::setValue("plan_level", $plan);
-        //We save the old plan level temporarily to facilitate conversion tracking
-        self::setValue("old_plan_level", $oldPlanLevel);
-    }
-
-    public static function GetPlanLevel()
-    {
-        $plan = self::getValue("plan_level");
-        if (trim($plan) == '') {
-            $plan = 'disabled';
-        }
-
-        return $plan;
-    }
-
-    public static function GetOldPlanLevel()
-    {
-        $oldPlan = self::getValue("old_plan_level");
-        return $oldPlan;
-    }
-
-    /** Clearing the old plan level indicates a change in your plan has been tracked (Google Analytics) */
-    public static function ClearOldPlanLevel()
-    {
-        self::setValue("old_plan_level", '');
-    }
-
-
-    public static function SetTrialEndingDate($date)
-    {
-        self::setValue("trial_end_date", $date);
-    }
-
-    public static function GetTrialEndingDate()
-    {
-        return self::getValue("trial_end_date");
-    }
-
     public static function SetEnableStreamConf($bool)
     {
         self::setValue("enable_stream_conf", $bool);
@@ -909,13 +882,13 @@ class Application_Model_Preference
             $versions[] = $item->get_title();
         }
         $latest = $versions;
-        self::setValue('latest_version', json_encode($latest));
         self::setValue('latest_version_nextcheck', strtotime('+1 week'));
         if (empty($latest)) {
-            return $config['airtime_version'];
-        } else {
-            return $latest;
+            return array($config['airtime_version']);
         }
+
+        self::setValue('latest_version', json_encode($latest));
+        return $latest;
     }
 
     public static function SetLatestVersion($version)
@@ -989,24 +962,6 @@ class Application_Model_Preference
         }
     }
     
-    public static function GetLiveChatEnabled()
-    {
-        $liveChat = self::getValue("live_chat", false);
-        if (is_null($liveChat) || $liveChat == "" || $liveChat == "1") { //Defaults to on
-            return true;
-        }
-        return false;
-    }
-    
-    public static function SetLiveChatEnabled($toggle)
-    {
-        if (is_bool($toggle)) {
-            self::setValue("live_chat", $toggle ? "1" : "0");
-        } else {
-            Logging::warn("Attempting to set live_chat to invalid value: $toggle. Must be a bool.");
-        }
-    }
-
     /* User specific preferences start */
 
     /**
@@ -1374,18 +1329,6 @@ class Application_Model_Preference
         self::setDiskUsage($currentDiskUsage + $filesize);
     }
 
-
-    public static function setProvisioningStatus($status)
-    {
-        //See constants.php for the list of valid values. eg. PROVISIONING_STATUS_ACTIVE
-        self::setValue("provisioning_status", $status);
-    }
-
-    public static function getProvisioningStatus()
-    {
-        return self::getValue("provisioning_status");
-    }
-
     public static function setTuneinEnabled($value)
     {
         self::setValue("tunein_enabled", $value);
@@ -1613,11 +1556,6 @@ class Application_Model_Preference
      * @return int either 0 (public) or 1 (private)
      */
     public static function getStationPodcastPrivacy() {
-        if (LIBRETIME_ENABLE_BILLING === true && !Billing::isStationPodcastAllowed()) {
-            // return private setting
-            return 1;
-        }
-
         return self::getValue("station_podcast_privacy");
     }
 
