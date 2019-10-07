@@ -113,10 +113,21 @@ def analyse_file (filename, database):
     #try to determine the filetype 
     mime_check = magic.detect_from_filename(filename)
     database["mime"] = mime_check.mime_type
-   
+    #
     mime = MimeTypes()
     type, a = mime.guess_type(filename)
+    #
     logging.info("mime_check: "+database["mime"]+ " mime: "+type)
+
+    # Mp3
+    if database["mime"] in ['audio/mpeg','audio/mp3']:
+        f = MP3(filename)
+    # Ogg
+    elif database["mime"] in ['audio/ogg', 'audio/vorbis', 'audio/x-vorbis', 'application/ogg', 'application/x-ogg']:
+        f = OggVorbis(filename)
+    else: # 'application/octet-stream'?
+        logging.warning("Unsupported metadata type: {} -- for audio {}".format(database["mime"], filename))
+        return False
 
     database["ftype"] = "audioclip"
     database["filesize"] = os.path.getsize(filename) 
@@ -126,7 +137,11 @@ def analyse_file (filename, database):
     database["md5"] = md5_hash(filename)
 
     # common tags
-    audio = EasyID3(filename) # TODO catch no ID3 tag
+    try:
+        audio = EasyID3(filename)
+    except Exception, err:
+        logging.error(err)
+        return False
     try:
         database["track_title"]=audio['title'][0]
     except:
@@ -157,18 +172,7 @@ def analyse_file (filename, database):
     except StandardError, err:
         logging.debug('no track_number for '+filename) 
         database["track_number"]= 0
-    # format dependent tags
-    # Mp3
-    if database["mime"] in ['audio/mpeg','audio/mp3']:
-        f = MP3(filename)
-    # Ogg
-    elif database["mime"] in ['audio/ogg', 'audio/vorbis', 'audio/x-vorbis', 'application/ogg', 'application/x-ogg']:
-        f = OggVorbis(filename)
-    else: # 'application/octet-stream'?
-        print("Unsupported metadata type: {} -- for audio {}".format(database["mime"], filename))
-        # logging.warning(...) TODO !
-        return False
-    # analysis
+    
     database["bit_rate"] = f.info.bitrate
     database["sample_rate"] = f.info.sample_rate
     if hasattr(f.info, "length"):
