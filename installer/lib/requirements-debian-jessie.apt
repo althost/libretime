@@ -8,6 +8,9 @@ lsb-release
 
 rabbitmq-server
 
+zip
+unzip
+
 postgresql
 postgresql-client
 php5-pgsql
@@ -28,6 +31,7 @@ libvo-aacenc0
 python-rgain
 python-gst-1.0
 gstreamer1.0-plugins-ugly
+python-pika
 
 patch
 

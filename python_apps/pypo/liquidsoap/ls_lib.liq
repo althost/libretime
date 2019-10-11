@@ -37,8 +37,12 @@ def append_title(m) =
       elsif !stream_metadata_type == 2 then
         [("title", "#{!station_name} - #{!show_name}"), ("mapped", "true")]
       else
-        [("title", "#{m['artist']} - #{m['title']}"), ("mapped", "true")]
-      end
+        if "#{m['artist']}" == "" then
+          [("title", "#{m['title']}"), ("mapped", "true")]
+        else
+          [("title", "#{m['artist']} - #{m['title']}"), ("mapped", "true")]
+        end
+     end
   end
 end
 
@@ -150,8 +154,6 @@ def output_to(output_type, type, bitrate, host, port, pass, mount_point, url, de
         end
         %endif
 
-# FDK-AAC is the only good AAC encoder. libvoaac is deprecated and aacplus is subpar. 
-# The difference in compression quality is clearly audible. -- Albert
         %ifencoder %fdkaac
         if type == "aac" then
             %include "fdkaac.liq"

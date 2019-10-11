@@ -6,16 +6,6 @@ yum install -y epel-release
 # Nux Dextop
 yum install -y http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
 
-# We are after PUIAS Unsupported where we get celery from
-# the install needs forcing since springdale-core tries to replace centos-release
-curl -O http://springdale.math.ias.edu/data/puias/6/x86_64/os/Packages/springdale-unsupported-6-2.sdl6.10.noarch.rpm
-rpm -hiv --nodeps springdale-unsupported-6-2.sdl6.10.noarch.rpm 
-rm -f springdale-unsupported-6-2.sdl6.10.noarch.rpm 
-# we need to install the key manually since it is also part of springdale-core
-curl -O http://puias.princeton.edu/data/puias/6/x86_64/os/RPM-GPG-KEY-puias
-rpm --import RPM-GPG-KEY-puias 
-rm -f RPM-GPG-KEY-puias
-
 # RaBe Liquidsoap Distribution (RaBe LSD)
 curl -o /etc/yum.repos.d/home:radiorabe:liquidsoap.repo \
     http://download.opensuse.org/repositories/home:/radiorabe:/liquidsoap/CentOS_7/home:radiorabe:liquidsoap.repo
@@ -75,6 +65,7 @@ rabbitmqctl add_vhost /airtime
 rabbitmqctl set_permissions -p /airtime airtime ".*" ".*" ".*"
 
 # LibreTime deps
+# TODO: move me to requirements-file ala debian e.a.
 yum install -y \
   git \
   php \
@@ -94,6 +85,7 @@ yum install -y \
   selinux-policy \
   policycoreutils-python \
   python-celery \
+  python2-pika \
   lsof
 
 # for pip ssl install
@@ -123,27 +115,6 @@ restorecon -Rv /vagrant /etc/airtime /srv/airtime
 
 # Disable default apache page
 sed -i -e 's/^/#/' /etc/httpd/conf.d/welcome.conf
-
-# Quick and dirty systemd unit install (will be in package later)
-unit_dir="/etc/systemd/system"
-unit_src_dir="/vagrant/installer/systemd"
-cp -rp ${unit_src_dir}/*.service ${unit_dir}
-
-# Overrides to use apache user for now (final packaging will have dedicated users)
-for service in `ls ${unit_src_dir}/*.service`; do
-    unit_name=`basename ${service}`
-    if [ "$unit_name" = "airtime-celery.service" ]; then
-        continue
-    fi
-    sed -i \
-        -e 's/User=.*/User=apache/' \
-        -e 's/Group=.*/Group=apache/' \
-        ${unit_dir}/${unit_name}
-done
-
-
-# for good measure, lets reload em
-systemctl daemon-reload
 
 # celery will not run unless we install a specific version (https://github.com/pypa/setuptools/issues/942)
 # this will need to be figured out later on and will get overriden by the docs installer anyhow :(

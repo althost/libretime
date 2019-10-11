@@ -253,26 +253,33 @@ class Application_Model_User
         return CcSubjsQuery::create()->filterByDbType($type)->find();
     }
 
-    public static function getFirstAdmin() {
+    /**
+     * Get the first admin user from the database
+     *
+     * This function gets used in UserController in the delete action. The controller
+     * uses it to figure out who to reassign the deleted users files to.
+     *
+     * @param $ignoreUser String optional userid of a user that shall be ignored when
+     *                           when looking for the "first" admin.
+     *
+     * @return CcSubj|null
+     */
+    public static function getFirstAdmin($ignoreUser = null) {
         $superAdmins = Application_Model_User::getUsersOfType('S');
         if (count($superAdmins) > 0) { // found superadmin => pick first one
             return $superAdmins[0];
         } else {
-            $admins = Application_Model_User::getUsersOfType('A');
+            // get all admin users
+            $query = CcSubjsQuery::create()->filterByDbType('A');
+            // ignore current user if one was specified
+            if ($ignoreUser !== null) {
+                $query->filterByDbId($ignoreUser, Criteria::NOT_EQUAL);
+            }
+            $admins = $query->find();
             if (count($admins) > 0) { // found admin => pick first one
                 return $admins[0];
             }
             Logging::warn("Warning. no admins found in database");
-            return null;
-        }
-    }
-
-    public static function getFirstAdminId()
-    {
-        $admin = self::getFirstAdmin();
-        if ($admin) { 
-            return $admin->getDbId();
-        } else {
             return null;
         }
     }
@@ -316,6 +323,11 @@ class Application_Model_User
     public static function getHosts($search=null)
     {
         return Application_Model_User::getUsers(array('H'), $search);
+    }
+
+    public static function getNonGuestUsers($search=null)
+    {
+        return Application_Model_User::getUsers(array('H','A','S','P'), $search);
     }
 
     public static function getUsersDataTablesInfo($datatables)

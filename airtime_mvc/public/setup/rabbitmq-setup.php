@@ -50,11 +50,6 @@ class RabbitMQSetup extends Setup {
         } catch(Exception $e) {
             $this->identifyRMQConnectionError();
         }
-
-        if (count(self::$errors) <= 0) {
-            $this->writeToTemp();
-        }
-
         return array(
             "message" => self::$message,
             "errors" => self::$errors
@@ -67,6 +62,7 @@ class RabbitMQSetup extends Setup {
                                    self::$_properties["user"],
                                    self::$_properties["password"],
                                    self::$_properties["vhost"]);
+        $this->writeToTemp();
         return isset($conn);
     }
 
@@ -81,13 +77,4 @@ class RabbitMQSetup extends Setup {
         self::$errors[] = self::RMQ_PORT;
         self::$errors[] = self::RMQ_VHOST;
     }
-
-    protected function writeToTemp() {
-        if (!file_exists(RMQ_INI_TEMP_PATH)) {
-            copy(BUILD_PATH . "rabbitmq-analyzer.ini", RMQ_INI_TEMP_PATH);
-        }
-        $this->_write(RMQ_INI_TEMP_PATH);
-        parent::writeToTemp();
-    }
-
 }
