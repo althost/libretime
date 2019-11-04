@@ -11,11 +11,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libretime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 16:23+0000\n"
-"PO-Revision-Date: 2017-07-19 15:51+0000\n"
-"Last-Translator: Xabier Arrabal <xabierarrabal@gmail.com>\n"
-"Language-Team: Spanish (Spain) (http://www.transifex.com/sourcefabric/airtime/language/es_ES/)\n"
-"Language: es_ES\n"
+"POT-Creation-Date: 2010-11-04 16:23+0000\n"
+"PO-Revision-Date: 2019-11-04 15:51+0000\n"
+"Last-Translator: Roberto Soto <webmaster@numerica.cl>\n"
+"Language-Team: Castilla (Wallmapu)\n"
+"Language: es_CL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: airtime_mvc/application/common/DateHelper.php:213
 #, php-format
 msgid "The year %s must be within the range of 1753 - 9999"
-msgstr "El año %s debe estar dentro del rango de 1753-9999"
+msgstr "El año %s debe estar dentro del rango entre 1753 y 9999"
 
 #: airtime_mvc/application/common/DateHelper.php:216
 #, php-format
@@ -587,7 +587,7 @@ msgstr "Cargue algunas pistas para agregarlas a su biblioteca."
 #: airtime_mvc/application/common/UsabilityHints.php:68
 #, php-format
 msgid "It looks like you haven't uploaded any audio files yet. %sUpload a file now%s."
-msgstr "Parece que aún no has subido ningún archivo de audio. %sCargar archivos ahora%s"
+msgstr "Parece que aún no has cargado ningún archivo de audio. %sSubir archivos ahora%s"
 
 #: airtime_mvc/application/common/UsabilityHints.php:74
 msgid "Click the 'New Show' button and fill out the required fields."
@@ -617,16 +617,16 @@ msgstr "Para iniciar la transmisión, haz clic en el programa actual y seleccion
 #: airtime_mvc/application/common/UsabilityHints.php:93
 #, php-format
 msgid "It looks like the current show needs more tracks. %sAdd tracks to your show now%s."
-msgstr "Parece que el programa actual necesita más contenido. %sAñadir contenido a tu programa ahora%s"
+msgstr "Parece que el programa actual necesita más pistas. %sAñadir pistas a tu programa ahora%s"
 
 #: airtime_mvc/application/common/UsabilityHints.php:100
 msgid "Click on the show starting next and select 'Schedule Tracks'"
-msgstr "Haz clic en el programa que comienza a continuación y selecciona 'Programar temas'"
+msgstr "Haz clic en el programa que comienza a continuación y selecciona 'Programar pistas'"
 
 #: airtime_mvc/application/common/UsabilityHints.php:102
 #, php-format
 msgid "It looks like the next show is empty. %sAdd tracks to your show now%s."
-msgstr "Parece que el próximo programa está vacío. %sAñadir contenido a tu programa ahora%s."
+msgstr "Parece que el próximo programa está vacío. %sAñadir pistas a tu programa ahora%s."
 
 #: airtime_mvc/application/configs/navigation.php:17
 #: airtime_mvc/application/controllers/LocaleController.php:122
@@ -636,7 +636,7 @@ msgstr "Mi Podcast"
 
 #: airtime_mvc/application/configs/navigation.php:25
 msgid "Radio Page"
-msgstr "Radio Web"
+msgstr "Página Web"
 
 #: airtime_mvc/application/configs/navigation.php:32
 msgid "Calendar"
@@ -644,7 +644,7 @@ msgstr "Calendario"
 
 #: airtime_mvc/application/configs/navigation.php:40
 msgid "Widgets"
-msgstr ""
+msgstr "Artefactos"
 
 #: airtime_mvc/application/configs/navigation.php:49
 #: airtime_mvc/application/views/scripts/embeddablewidgets/player.phtml:6
@@ -662,7 +662,7 @@ msgstr ""
 
 #: airtime_mvc/application/configs/navigation.php:69
 msgid "Settings"
-msgstr "Ajustes"
+msgstr "Configuración"
 
 #: airtime_mvc/application/configs/navigation.php:78
 #: airtime_mvc/application/views/scripts/preference/index.phtml:2
@@ -680,7 +680,7 @@ msgstr "Usuarios"
 
 #: airtime_mvc/application/configs/navigation.php:96
 msgid "Streams"
-msgstr "Streams"
+msgstr "Streaming"
 
 #: airtime_mvc/application/configs/navigation.php:102
 #: airtime_mvc/application/controllers/LocaleController.php:380
@@ -700,7 +700,7 @@ msgstr "Historial de reproducción"
 
 #: airtime_mvc/application/configs/navigation.php:127
 msgid "History Templates"
-msgstr "Plantillas Historial"
+msgstr "Plantillas del Historial"
 
 #: airtime_mvc/application/configs/navigation.php:134
 msgid "Listener Stats"
@@ -721,7 +721,7 @@ msgstr "Cómo iniciar"
 
 #: airtime_mvc/application/configs/navigation.php:190
 msgid "FAQ"
-msgstr "PMF"
+msgstr "Preguntas Frecuentes"
 
 #: airtime_mvc/application/configs/navigation.php:195
 msgid "User Manual"
@@ -729,7 +729,7 @@ msgstr "Manual para el usuario"
 
 #: airtime_mvc/application/configs/navigation.php:200
 msgid "Get Help Online"
-msgstr ""
+msgstr "Obten ayuda en línea"
 
 #: airtime_mvc/application/configs/navigation.php:210
 msgid "What's New?"
@@ -761,7 +761,7 @@ msgstr "Solicitud incorrecta. No se pasa el parámetro 'mode'."
 
 #: airtime_mvc/application/controllers/ApiController.php:838
 msgid "Bad request. 'mode' parameter is invalid"
-msgstr "Solicitud incorrecta. El parámetro 'mode' pasado es inválido"
+msgstr "Solicitud incorrecta. El parámetro 'mode' es inválido"
 
 #: airtime_mvc/application/controllers/DashboardController.php:35
 #: airtime_mvc/application/controllers/DashboardController.php:84
@@ -784,8 +784,8 @@ msgid ""
 "            2. Enable the Public LibreTime API under Settings -> Preferences"
 msgstr ""
 "Para configurar y utilizar el reproductor incrustable debes:<br><br>\n"
-"            1. Habilitar al menos un stream MP3, AAC, or OGG en Ajustes -> Streams<br>\n"
-"            2. Habilitar la API pública de Libretime en Ajustes -> Preferencias"
+"            1. Habilitar al menos un stream MP3, AAC, or OGG en Configuración -> Streaming<br>\n"
+"            2. Habilitar la API pública de Libretime en Configuración -> Preferencias"
 
 #: airtime_mvc/application/controllers/EmbeddablewidgetsController.php:41
 msgid ""
@@ -793,7 +793,7 @@ msgid ""
 "            Enable the Public LibreTime API under Settings -> Preferences"
 msgstr ""
 "Para utilizar el calendario semanal incrustable debes:<br><br>\n"
-"            Habilitar la API pública de Libretime en Ajustes -> Preferencias"
+"            Habilitar la API pública de Libretime en Configuración -> Preferencias"
 
 #: airtime_mvc/application/controllers/EmbeddablewidgetsController.php:53
 msgid ""
@@ -801,7 +801,7 @@ msgid ""
 "            Enable the Public LibreTime API under Settings -> Preferences"
 msgstr ""
 "Para añadir la pestaña Radio a tu página de Facebook, debes primero:<br><br>\n"
-"            Habilitar la API pública de Libretime en Ajustes -> Preferencias"
+"            Habilitar la API pública de Libretime en Configuración -> Preferencias"
 
 #: airtime_mvc/application/controllers/ErrorController.php:87
 msgid "Page not found."
@@ -926,8 +926,8 @@ msgid "Copy of %s"
 msgstr "Copia de %s"
 
 #: airtime_mvc/application/controllers/ListenerstatController.php:51
-msgid "Please make sure admin user/password is correct on Settings->Streams page."
-msgstr "Verifica que la contraseña del usuario admin. esté correcta en Sistema->página de streams."
+msgid "Please make sure admin user/password is correct on System->Streams page."
+msgstr "Verifica que la contraseña del usuario admin. esté correcta en Configuración -> Streaming"
 
 #: airtime_mvc/application/controllers/LocaleController.php:25
 #: airtime_mvc/application/layouts/scripts/audio-player.phtml:5
@@ -945,11 +945,11 @@ msgstr "Grabando:"
 
 #: airtime_mvc/application/controllers/LocaleController.php:29
 msgid "Master Stream"
-msgstr "Stream maestro"
+msgstr "Streaming maestro"
 
 #: airtime_mvc/application/controllers/LocaleController.php:30
 msgid "Live Stream"
-msgstr "Stream en vivo"
+msgstr "Streaming en vivo"
 
 #: airtime_mvc/application/controllers/LocaleController.php:31
 msgid "Nothing Scheduled"
@@ -1015,7 +1015,7 @@ msgstr "Solo puedes añadir pistas a bloques inteligentes"
 #: airtime_mvc/application/controllers/LocaleController.php:48
 #: airtime_mvc/application/controllers/PlaylistController.php:180
 msgid "You can only add tracks, smart blocks, and webstreams to playlists."
-msgstr "Solo puedes añadir pistas, bloques inteligentes y webstreams a listas de reproducción."
+msgstr "Solo puedes añadir pistas, bloques inteligentes y enlaces a listas de reproducción."
 
 #: airtime_mvc/application/controllers/LocaleController.php:51
 msgid "Please select a cursor position on timeline."
@@ -1035,7 +1035,7 @@ msgstr "No has añadido ningún bloque inteligente"
 
 #: airtime_mvc/application/controllers/LocaleController.php:55
 msgid "You haven't added any webstreams"
-msgstr "No has añadido ningún webstream"
+msgstr "No has añadido ningún enlace"
 
 #: airtime_mvc/application/controllers/LocaleController.php:56
 msgid "Learn about tracks"
@@ -1055,7 +1055,7 @@ msgstr "Aprenda sobre bloques inteligentes"
 
 #: airtime_mvc/application/controllers/LocaleController.php:60
 msgid "Learn about webstreams"
-msgstr "Aprenda sobre webstreams"
+msgstr "Aprenda sobre enlaces"
 
 #: airtime_mvc/application/controllers/LocaleController.php:61
 msgid "Click 'New' to create one."
@@ -1164,7 +1164,7 @@ msgstr "Director"
 #: airtime_mvc/application/services/HistoryService.php:1177
 #: airtime_mvc/application/views/scripts/podcast/station.phtml:41
 msgid "Copyright"
-msgstr ""
+msgstr "Derechos de autora"
 
 #: airtime_mvc/application/controllers/LocaleController.php:83
 #: airtime_mvc/application/forms/SmartBlockCriteria.php:61
@@ -1241,7 +1241,7 @@ msgstr "Estilo (mood)"
 #: airtime_mvc/application/forms/SmartBlockCriteria.php:71
 #: airtime_mvc/application/models/Block.php:1378
 msgid "Owner"
-msgstr "Propietario"
+msgstr "Propietaria"
 
 #: airtime_mvc/application/controllers/LocaleController.php:94
 #: airtime_mvc/application/forms/SmartBlockCriteria.php:72
@@ -1304,7 +1304,7 @@ msgstr "Bloques"
 
 #: airtime_mvc/application/controllers/LocaleController.php:105
 msgid "Web Streams"
-msgstr "Web streams"
+msgstr "Enlaces"
 
 #: airtime_mvc/application/controllers/LocaleController.php:106
 msgid "Unknown type: "
@@ -1321,7 +1321,7 @@ msgstr "Carga en progreso..."
 
 #: airtime_mvc/application/controllers/LocaleController.php:109
 msgid "Retrieving data from the server..."
-msgstr "Recolectando data desde el servidor..."
+msgstr "Recolectando datos desde el servidor..."
 
 #: airtime_mvc/application/controllers/LocaleController.php:114
 msgid "The soundcloud id for this file is: "
@@ -1337,7 +1337,7 @@ msgstr "Código de error:"
 
 #: airtime_mvc/application/controllers/LocaleController.php:117
 msgid "Error msg: "
-msgstr "Msg de error: "
+msgstr "Mensaje de error: "
 
 #: airtime_mvc/application/controllers/LocaleController.php:118
 msgid "Input must be a positive number"
@@ -1362,7 +1362,7 @@ msgstr "Actualmente estas subiendo archivos.  %sSi cambias de pantalla el proces
 
 #: airtime_mvc/application/controllers/LocaleController.php:127
 msgid "Open Media Builder"
-msgstr "Abrir Media Builder"
+msgstr "Abrir el Constructor Multimedia"
 
 #: airtime_mvc/application/controllers/LocaleController.php:128
 msgid "please put in a time '00:00:00 (.0)'"
@@ -1370,7 +1370,7 @@ msgstr "Por favor introduce un tiempo '00:00:00 (.0)'"
 
 #: airtime_mvc/application/controllers/LocaleController.php:129
 msgid "Please enter a valid time in seconds. Eg. 0.5"
-msgstr "Por favor introduce un tiempo en segundos válido. Ej. 0.5"
+msgstr "Por favor introduce un tiempo en segundos en un formato válido. Ej. 0.5"
 
 #: airtime_mvc/application/controllers/LocaleController.php:130
 msgid "Your browser does not support playing this file type: "
@@ -1520,7 +1520,7 @@ msgstr "Elegir carpeta de almacenamiento"
 
 #: airtime_mvc/application/controllers/LocaleController.php:167
 msgid "Choose Folder to Watch"
-msgstr "Elegir carpeta a monitorizar"
+msgstr "Elegir carpeta para monitorizar"
 
 #: airtime_mvc/application/controllers/LocaleController.php:169
 msgid ""
@@ -1528,7 +1528,7 @@ msgid ""
 "This will remove the files from your Airtime library!"
 msgstr ""
 "¿Estás seguro de querer cambiar la carpeta de almacenamiento?\n"
-" ¡Esto eliminará los archivos de tu biblioteca de Airtime!"
+" ¡Esto eliminará los archivos de tu biblioteca de LibreTime!"
 
 #: airtime_mvc/application/controllers/LocaleController.php:170
 #: airtime_mvc/application/views/scripts/preference/directory-config.phtml:2
@@ -1546,7 +1546,7 @@ msgstr "Esta ruta es actualmente inaccesible."
 #: airtime_mvc/application/controllers/LocaleController.php:174
 #, php-format
 msgid "Some stream types require extra configuration. Details about enabling %sAAC+ Support%s or %sOpus Support%s are provided."
-msgstr "Algunos tipos de stream requieren configuración adicional. Se proporcionan detalles sobre la activación de %sSoporte AAC+%s o %sSoporte Opus%s."
+msgstr "Algunos tipos de streaming requieren configuración adicional. Se proporcionan detalles sobre la activación de %sSoporte AAC+%s o %sSoporte Opus%s."
 
 #: airtime_mvc/application/controllers/LocaleController.php:175
 msgid "Connected to the streaming server"
@@ -1554,7 +1554,7 @@ msgstr "Conectado al servidor de streaming"
 
 #: airtime_mvc/application/controllers/LocaleController.php:176
 msgid "The stream is disabled"
-msgstr "Se desactivó el stream"
+msgstr "Se desactivó el streaming"
 
 #: airtime_mvc/application/controllers/LocaleController.php:177
 #: airtime_mvc/application/forms/StreamSettingSubForm.php:191
@@ -1588,16 +1588,16 @@ msgstr "Elige esta opción para activar automáticamente la fuente maestra/del p
 
 #: airtime_mvc/application/controllers/LocaleController.php:186
 msgid "If your Icecast server expects a username of 'source', this field can be left blank."
-msgstr "Si tu servidor de Icecast te pide un usuario para la 'source' (fuente), puedes dejar este campo en blanco."
+msgstr "Si tu servidor de Icecast te pide el usuario 'source', puedes dejar este campo en blanco."
 
 #: airtime_mvc/application/controllers/LocaleController.php:187
 #: airtime_mvc/application/controllers/LocaleController.php:197
 msgid "If your live streaming client does not ask for a username, this field should be 'source'."
-msgstr "Si tu cliente de streaming en vivo no te pide un usuario, este campo debe ser la 'source' (fuente)."
+msgstr "Si tu cliente de streaming en vivo no te pide un usuario, este campo debe ser 'source'."
 
 #: airtime_mvc/application/controllers/LocaleController.php:188
 msgid "WARNING: This will restart your stream and may cause a short dropout for your listeners!"
-msgstr "¡ADVERTENCIA: Esto reiniciará tu stream y puede ocasionar la desconexión de tus oyentes!"
+msgstr "¡ADVERTENCIA: Esto reiniciará tu streaming ocasionando la desconexión de tus oyentes!"
 
 #: airtime_mvc/application/controllers/LocaleController.php:189
 msgid "This is the admin username and password for Icecast/SHOUTcast to get listener statistics."
@@ -2028,10 +2028,6 @@ msgstr "Eliminar los ítems programados seleccionados"
 msgid "Jump to the current playing track"
 msgstr "Saltar a la pista en reproducción actual"
 
-#: airtime_mvc/application/controllers/LocaleController.php:331
-msgid "Jump to Current"
-msgstr "Saltar a la pista actual"
-
 #: airtime_mvc/application/controllers/LocaleController.php:314
 msgid "Cancel current show"
 msgstr "Cancelar el programa actual"
@@ -2108,7 +2104,7 @@ msgstr "Importar archivos de medios"
 
 #: airtime_mvc/application/controllers/LocaleController.php:339
 msgid "Create playlists, smart blocks, and webstreams"
-msgstr "Crear listas de reproducción, bloques inteligentes y webstreams"
+msgstr "Crear listas de reproducción, bloques inteligentes y enlaces"
 
 #: airtime_mvc/application/controllers/LocaleController.php:340
 msgid "Manage their own library content"
@@ -2376,15 +2372,15 @@ msgstr "Bienvenido al nuevo Airtime Pro!"
 
 #: airtime_mvc/application/controllers/LocaleController.php:434
 msgid "On Air"
-msgstr ""
+msgstr "Al Aire"
 
 #: airtime_mvc/application/controllers/LocaleController.php:435
 msgid "Off Air"
-msgstr ""
+msgstr "Envasado"
 
 #: airtime_mvc/application/controllers/LocaleController.php:436
 msgid "Offline"
-msgstr ""
+msgstr "Desconectado"
 
 #: airtime_mvc/application/controllers/LocaleController.php:437
 msgid "Nothing scheduled"
@@ -2500,11 +2496,11 @@ msgstr "¡Configuración actualizada correctamente!"
 #: airtime_mvc/application/controllers/WebstreamController.php:28
 #: airtime_mvc/application/controllers/WebstreamController.php:32
 msgid "Untitled Webstream"
-msgstr "Webstream sin título"
+msgstr "Enlace sin título"
 
 #: airtime_mvc/application/controllers/WebstreamController.php:154
 msgid "Webstream saved."
-msgstr "Se almacenó el webstream"
+msgstr "Se almacenó el enlace"
 
 #: airtime_mvc/application/controllers/WebstreamController.php:162
 msgid "Invalid form values."
@@ -2544,20 +2540,12 @@ msgid "Must wait at least 1 hour to rebroadcast"
 msgstr "Debes esperar al menos 1 hora para reprogramar"
 
 #: airtime_mvc/application/forms/AddShowAutoPlaylist.php:18
-msgid "Add Autoloading Playlist ?"
-msgstr "¿Programar Lista Auto-Cargada?"
-
-#: airtime_mvc/application/views/scripts/form/add-show-autoplaylist.phtml:14
-msgid "Autoloading playlists' contents are added to shows one hour before the show airs. <a target='_blank' href='http://libretime.org/manual/calendar/#autoloading-playlist'>More information</a>"
-msgstr "Se le agrega los contenidos de las listas auto-cargadas a programas una hora antes de que suenen. <a target='_blank' href='http://libretime.org/manual/calendar/#autoloading-playlist'>Mas información</a>"
+msgid "Auto Schedule Playlist ?"
+msgstr "¿Auto Programar Lista?"
 
 #: airtime_mvc/application/forms/AddShowAutoPlaylist.php:25
 msgid "Select Playlist"
 msgstr "Seleccionar Lista"
-
-#: airtime_mvc/application/forms/AddShowAutoPlaylist.php:32
-msgid "Repeat Playlist Until Show is Full ?"
-msgstr "Repitir lista hasta que termine el programa?"
 
 #: airtime_mvc/application/forms/AddShowLiveStream.php:11
 #, php-format
@@ -2578,7 +2566,7 @@ msgstr "Contraseña personalizada"
 
 #: airtime_mvc/application/forms/AddShowLiveStream.php:49
 msgid "Host:"
-msgstr ""
+msgstr "Servidor:"
 
 #: airtime_mvc/application/forms/AddShowLiveStream.php:55
 msgid "Port:"
@@ -2586,7 +2574,7 @@ msgstr "Puerto:"
 
 #: airtime_mvc/application/forms/AddShowLiveStream.php:61
 msgid "Mount:"
-msgstr "Montaje:"
+msgstr "Punto de Montaje:"
 
 #: airtime_mvc/application/forms/AddShowLiveStream.php:78
 msgid "Username field cannot be empty."
@@ -2681,7 +2669,7 @@ msgstr "Color del texto:"
 
 #: airtime_mvc/application/forms/AddShowStyle.php:49
 msgid "Current Logo:"
-msgstr "Loco actual:"
+msgstr "Logo actual:"
 
 #: airtime_mvc/application/forms/AddShowStyle.php:64
 #: airtime_mvc/application/forms/GeneralPreferences.php:55
@@ -2734,7 +2722,7 @@ msgstr "Descripción:"
 
 #: airtime_mvc/application/forms/AddShowWhat.php:69
 msgid "Instance Description:"
-msgstr "Descripcin de instancia:"
+msgstr "Descripción de la instancia:"
 
 #: airtime_mvc/application/forms/AddShowWhen.php:16
 msgid "'%value%' does not fit the time format 'HH:mm'"
@@ -2781,11 +2769,11 @@ msgstr "La fecha/hora de finalización no puede estar en el pasado."
 
 #: airtime_mvc/application/forms/AddShowWhen.php:164
 msgid "Cannot have duration < 0m"
-msgstr "No puede tener una duración < 0m"
+msgstr "No puede tener una duración inferior a 0"
 
 #: airtime_mvc/application/forms/AddShowWhen.php:168
 msgid "Cannot have duration 00h 00m"
-msgstr "No puede tener una duración 00h 00m"
+msgstr "No puede tener una duración de 00h 00m"
 
 #: airtime_mvc/application/forms/AddShowWhen.php:175
 msgid "Cannot have duration greater than 24h"
@@ -2811,7 +2799,7 @@ msgstr "DJs:"
 #: airtime_mvc/application/forms/LiveStreamingPreferences.php:42
 #: airtime_mvc/application/forms/Login.php:39
 msgid "Username:"
-msgstr "Usuario:"
+msgstr "Usuaria:"
 
 #: airtime_mvc/application/forms/AddUser.php:37
 #: airtime_mvc/application/forms/EditUser.php:47
@@ -2840,7 +2828,7 @@ msgstr "Apellido:"
 #: airtime_mvc/application/forms/RegisterAirtime.php:51
 #: airtime_mvc/application/forms/SupportSettings.php:43
 msgid "Email:"
-msgstr ""
+msgstr "Correo e°"
 
 #: airtime_mvc/application/forms/AddUser.php:75
 #: airtime_mvc/application/forms/EditUser.php:93
@@ -3005,16 +2993,8 @@ msgid "Default Fade Out (s):"
 msgstr "Fade Out preseterminado (s):"
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:105
-msgid "Overwrite Podcast Episode Metatags"
+msgid "Podcast Album Override"
 msgstr "Sobrescribir el álbum del podcast"
-
-#: airtime_mvc/application/forms/GeneralPreferences.php:120
-msgid "Generate a smartblock and a playlist upon creation of a new podcast"
-msgstr ""
-
-#: airtime_mvc/application/forms/GeneralPreferences.php:126
-msgid "If this option is enabled, a new smartblock and playlist matching the newest track of a podcast will be generated immediately upon creation of a new podcast. Note that the \"Overwrite Podcast Episode Metatags\" feature must also be enabled in order for smartblocks to reliably find episodes."
-msgstr ""
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:107
 #: airtime_mvc/application/forms/GeneralPreferences.php:125
@@ -3027,12 +3007,12 @@ msgid "Enabled"
 msgstr "Activado"
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:111
-msgid "Enabling this feature will cause podcast episode tracks to have their Artist, Title, and Album metatags set from podcast feed values. Note that enabling this feature is recommended in order to ensure reliable scheduling of episodes via smartblocks."
-msgstr "Habilitar esto significa que las pistas del podcast siempre contendrán el nombre del podcast en su campo de álbum."
+msgid "Enabling this means that podcast tracks will always contain the podcast name in their album field."
+msgstr "Habilitar esto significa que las pistas del podcast siempre contendrán el nombre del podcast en su campo de álbum. Nótese que se recomienda habilitar esta función, para asegurar una buena calendarización de los episodios por medio de Bloques Inteligentes."
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:122
-msgid "Public LibreTime API"
-msgstr "API Pública de Libretime"
+msgid "Public Airtime API"
+msgstr "API Pública de LibreTime"
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:123
 msgid "Required for embeddable schedule widget."
@@ -3040,7 +3020,7 @@ msgstr "Requerido para el widget de programación incrustado"
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:129
 msgid ""
-"Enabling this feature will allow LibreTime to provide schedule data\n"
+"Enabling this feature will allow Airtime to provide schedule data\n"
 "                                            to external widgets that can be embedded in your website."
 msgstr ""
 "Habilitar esta función permite a Libretime proporcionar datos de programación\n"
@@ -3168,7 +3148,7 @@ msgstr ""
 #: airtime_mvc/application/forms/StreamSettingSubForm.php:164
 #: airtime_mvc/application/views/scripts/user/add-user.phtml:18
 msgid "Username"
-msgstr "Usuario"
+msgstr "Usuaria"
 
 #: airtime_mvc/application/forms/PasswordRestore.php:36
 msgid "Reset password"
@@ -3186,27 +3166,27 @@ msgstr "Reproduciéndose ahora"
 
 #: airtime_mvc/application/forms/Player.php:25
 msgid "Select Stream:"
-msgstr "Seleccionar Stream:"
+msgstr "Seleccionar Streaming:"
 
 #: airtime_mvc/application/forms/Player.php:28
 msgid "Auto detect the most appropriate stream to use."
-msgstr "Autodetectar el stream más apropiado a reproducir."
+msgstr "Autodetectar el streaming más apropiado para reproducir."
 
 #: airtime_mvc/application/forms/Player.php:29
 msgid "Select a stream:"
-msgstr "Selecciona un stream:"
+msgstr "Selecciona un streaming:"
 
 #: airtime_mvc/application/forms/Player.php:41
 msgid " - Mobile friendly"
-msgstr ""
+msgstr "Amigable para móviles"
 
 #: airtime_mvc/application/forms/Player.php:45
 msgid " - The player does not support Opus streams."
-msgstr " - El reproductor no soporta streams Opus."
+msgstr " - El reproductor no soporta streaming de tipo Opus."
 
 #: airtime_mvc/application/forms/Player.php:71
 msgid "Embeddable code:"
-msgstr "Código embebible"
+msgstr "Código incrustable"
 
 #: airtime_mvc/application/forms/Player.php:72
 msgid "Copy this code and paste it into your website's HTML to embed the player in your site."
@@ -3355,18 +3335,6 @@ msgstr "Dinámico"
 msgid "Allow Repeated Tracks:"
 msgstr "Permitir Pistas Repetidas:"
 
-#: airtime_mvc/application/forms/SmartBlockCriteria.php:453
-msgid "Allow last track to exceed time limit:"
-msgstr ""
-
-#: airtime_mvc/application/views/scripts/playlist/update.phtml:25
-msgid "</br>This is only a preview of possible content generated by the smart block based upon the above criteria."
-msgstr ""
-
-#: airtime_mvc/application/views/scripts/form/smart-block-criteria.phtml:82
-msgid "Advanced options"
-msgstr ""
-
 #: airtime_mvc/application/forms/SmartBlockCriteria.php:308
 msgid "Sort Tracks:"
 msgstr "Ordenar Pistas:"
@@ -3513,11 +3481,11 @@ msgstr ""
 
 #: airtime_mvc/application/forms/StreamSetting.php:46
 msgid "Icecast Vorbis Metadata"
-msgstr "Metadata Icecast Vorbis"
+msgstr "Metadatos Icecast Vorbis"
 
 #: airtime_mvc/application/forms/StreamSetting.php:56
 msgid "Stream Label:"
-msgstr "Etiqueta del stream:"
+msgstr "Etiqueta del streaming:"
 
 #: airtime_mvc/application/forms/StreamSetting.php:57
 msgid "Artist - Title"
@@ -3533,15 +3501,15 @@ msgstr "Nombre de la estación - nombre del programa"
 
 #: airtime_mvc/application/forms/StreamSetting.php:65
 msgid "Off Air Metadata"
-msgstr "Metadatos Off Air"
+msgstr "Metadatos Envasado"
 
 #: airtime_mvc/application/forms/StreamSetting.php:71
 msgid "Enable Replay Gain"
-msgstr "Activar ajuste del volumen"
+msgstr "Activar ajuste del volúmen"
 
 #: airtime_mvc/application/forms/StreamSetting.php:77
 msgid "Replay Gain Modifier"
-msgstr "Modificar ajuste de volumen"
+msgstr "Modificar ajuste de volúmen"
 
 #: airtime_mvc/application/forms/StreamSetting.php:85
 msgid "Streaming Server:"
@@ -3565,7 +3533,7 @@ msgstr "Móvil:"
 
 #: airtime_mvc/application/forms/StreamSettingSubForm.php:66
 msgid "Stream Type:"
-msgstr "Tipo de stream:"
+msgstr "Tipo de streaming:"
 
 #: airtime_mvc/application/forms/StreamSettingSubForm.php:74
 #: airtime_mvc/application/views/scripts/library/get-file-metadata.ajax.phtml:15
@@ -3612,7 +3580,7 @@ msgstr "Punto de montaje"
 
 #: airtime_mvc/application/forms/StreamSettingSubForm.php:174
 msgid "Admin User"
-msgstr "Usuario administrativo"
+msgstr "Usuaria administrativa"
 
 #: airtime_mvc/application/forms/StreamSettingSubForm.php:183
 msgid "Admin Password"
@@ -3669,17 +3637,17 @@ msgstr "Bloque Inteligente"
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:68
 msgid "Webstream"
-msgstr ""
+msgstr "Enlace"
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:73
 msgid "Upload"
-msgstr "Cargar archivos"
+msgstr "Subir archivos"
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:81
 #: airtime_mvc/application/views/scripts/showbuilder/builderDialog.phtml:10
 #: airtime_mvc/application/views/scripts/showbuilder/index.phtml:5
 msgid "Dashboard"
-msgstr ""
+msgstr "Estudio"
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:87
 msgid "Podcasts"
@@ -3688,12 +3656,12 @@ msgstr ""
 #: airtime_mvc/application/layouts/scripts/layout.phtml:143
 #: airtime_mvc/application/layouts/scripts/layout.phtml:169
 msgid "Play"
-msgstr ""
+msgstr "Reproducir"
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:144
 #: airtime_mvc/application/layouts/scripts/layout.phtml:170
 msgid "Stop"
-msgstr ""
+msgstr "Detener"
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:150
 msgid "Set Cue In"
@@ -3709,7 +3677,7 @@ msgstr ""
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:191
 msgid "Airtime Pro has a new look!"
-msgstr "¡Airtime Pro has a new look!"
+msgstr "¡LibreTime en Numerica se ve bien!"
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:192
 msgid ""
@@ -3724,7 +3692,7 @@ msgid ""
 "Our new Dashboard view now has a powerful tabbed editing interface, so updating your tracks and playlists\n"
 "                        is easier than ever."
 msgstr ""
-"Nuestra nueva vista Dashboard tiene ahora una poderosa interfaz de edición por pestañas, por lo que la actualización de tus pistas y listas de reproducción\n"
+"Nuestra nueva vista Estudio tiene ahora una poderosa interfaz de edición por pestañas, por lo que la actualización de tus pistas y listas de reproducción\n"
 "                     es más sencillo que nunca."
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:197
@@ -3732,8 +3700,8 @@ msgid ""
 "We've streamlined the Airtime interface to make navigation easier. With the most important tools\n"
 "                        just a click away, you'll be on air and hands-free in no time."
 msgstr ""
-"Hemos simplificado la interfaz de Airtime para facilitar la navegación. Con las herramientas más importantes\n"
-"                  a un clic de distancia, estarás en el aire y manos libres en un momento."
+"Hemos simplificado la interfaz de LibreTime para facilitar la navegación. Con las herramientas más importantes\n"
+"                  a un click de distancia, estarás en el aire y manos libres en un momento."
 
 #: airtime_mvc/application/layouts/scripts/layout.phtml:199
 msgid "Got a huge music library? No problem! With the new Upload page, you can drag and drop whole folders to our private cloud."
@@ -3744,18 +3712,18 @@ msgid ""
 "The new Airtime is smoother, sleeker, and faster - on even more devices! We're committed to improving the Airtime\n"
 "                        experience, no matter how you're connected."
 msgstr ""
-"El nuevo Airtime es más suave, elegante y rápido, ¡incluso en más dispositivos! Estamos comprometidos a mejorar la experiencia\n"
-"                        con Airtime, sin importar cómo te conectes."
+"El nuevo LibreTime es más suave, elegante y rápido, ¡incluso en más dispositivos! Estamos comprometidos a mejorar la experiencia\n"
+"                        con LibreTime, sin importar cómo te conectes."
 
 #: airtime_mvc/application/layouts/scripts/livestream.phtml:9
 #: airtime_mvc/application/views/scripts/dashboard/stream-player.phtml:2
 msgid "Live stream"
-msgstr "Stream en directo"
+msgstr "Transmisión en vivo"
 
 #: airtime_mvc/application/layouts/scripts/login.phtml:24
 #, php-format
 msgid "%1$s copyright &copy; %2$s All rights reserved.<br />Maintained and distributed under the %3$s by %4$s"
-msgstr "%1$s copyright &copy; %2$s Todos los derechos reservados.<br />Mantenido y distribuido bajo el %3$s por %4$s"
+msgstr "%1$s Licencia de Producción de Pares %2$s - Software Libre por una economía de pares <br />Mantenido y distribuido bajo el %3$s por %4$s"
 
 #: airtime_mvc/application/models/Auth.php:33
 #, php-format
@@ -3790,7 +3758,7 @@ msgstr ""
 "\n"
 "\n"
 "Gracias,\n"
-"El equipo %s"
+"La colectividad %s"
 
 #: airtime_mvc/application/models/Auth.php:38
 #, php-format
@@ -3878,7 +3846,7 @@ msgstr "Seleccionar país"
 
 #: airtime_mvc/application/models/Schedule.php:206
 msgid "livestream"
-msgstr ""
+msgstr "transmisión"
 
 #: airtime_mvc/application/models/Scheduler.php:77
 msgid "Cannot move items out of linked shows"
@@ -3966,11 +3934,11 @@ msgstr "La dirección (URL) debe ser de 512 caracteres o menos"
 
 #: airtime_mvc/application/models/Webstream.php:193
 msgid "No MIME type found for webstream."
-msgstr "No se encontró ningún tipo MIME para el webstream."
+msgstr "No se encontró ningún tipo MIME para el enlace."
 
 #: airtime_mvc/application/models/Webstream.php:209
 msgid "Webstream name cannot be empty"
-msgstr "El nombre del webstream no puede estar vacío"
+msgstr "El nombre del enlace no puede estar vacío"
 
 #: airtime_mvc/application/models/Webstream.php:278
 msgid "Could not parse XSPF playlist"
@@ -3986,12 +3954,12 @@ msgstr "No se pudo procesar el M3U de la lista de reproducción"
 
 #: airtime_mvc/application/models/Webstream.php:332
 msgid "Invalid webstream - This appears to be a file download."
-msgstr "Webstream inválido - Esto parece ser una descarga de archivo."
+msgstr "Enlace inválido - Esto parece ser una descarga de archivo."
 
 #: airtime_mvc/application/models/Webstream.php:336
 #, php-format
 msgid "Unrecognized stream type: %s"
-msgstr "Tipo de stream no reconocido: %s"
+msgstr "Tipo de streaming no reconocido: %s"
 
 #: airtime_mvc/application/services/CalendarService.php:50
 msgid "Record file doesn't exist"
@@ -4047,7 +4015,7 @@ msgstr "Permiso denegado"
 
 #: airtime_mvc/application/services/CalendarService.php:258
 msgid "Can't drag and drop repeating shows"
-msgstr "No es posible arrastrar y soltar shows que se repiten"
+msgstr "No es posible arrastrar y soltar programas que se repiten"
 
 #: airtime_mvc/application/services/CalendarService.php:267
 msgid "Can't move a past show"
@@ -4127,7 +4095,7 @@ msgstr "Acerca de"
 #: airtime_mvc/application/views/scripts/dashboard/about.phtml:9
 #, php-format
 msgid "%1$s %2$s, the open radio software for scheduling and remote station management."
-msgstr "%1$s %2$s, El software de radio abierto para la programación y gestión remota de estaciones."
+msgstr "%1$s %2$s, El software libre para para la programación y gestión remota de estaciones de radio."
 
 #: airtime_mvc/application/views/scripts/dashboard/about.phtml:22
 #, php-format
@@ -4167,7 +4135,7 @@ msgstr "Añadir contenido a tu Programa"
 
 #: airtime_mvc/application/views/scripts/dashboard/help.phtml:11
 msgid "Click on your show in the calendar and select 'Schedule Show'. In the popup window drag tracks into your show."
-msgstr "Haz clic en tu programa en el calendario y selecciona 'Agendar Programa'. En la ventana emergente, arrastra conteido tu programa."
+msgstr "Haz clic en tu programa en el calendario y selecciona 'Agendar Programa'. En la ventana emergente, arrastra contenido tu programa."
 
 #: airtime_mvc/application/views/scripts/dashboard/help.phtml:16
 msgid "Now you're good to go!"
@@ -4184,7 +4152,7 @@ msgstr "Compartir"
 
 #: airtime_mvc/application/views/scripts/dashboard/stream-player.phtml:64
 msgid "Select stream:"
-msgstr "Selecciona stream:"
+msgstr "Selecciona streaming:"
 
 #: airtime_mvc/application/views/scripts/dashboard/table-test.phtml:2
 msgid "Table Test"
@@ -4196,7 +4164,7 @@ msgstr "Siguiente"
 
 #: airtime_mvc/application/views/scripts/embed/weekly-program.phtml:87
 msgid "Looks like there are no shows scheduled on this day."
-msgstr "Parece que no hay nada programado para este día."
+msgstr "Parece que no hay nada programado hoy día."
 
 #: airtime_mvc/application/views/scripts/embeddablewidgets/facebook.phtml:5
 msgid "Facebook Radio Player"
@@ -4236,7 +4204,7 @@ msgstr "No pudimos encontrar la página que buscas."
 
 #: airtime_mvc/application/views/scripts/error/error-500.phtml:10
 msgid "Oops!"
-msgstr ""
+msgstr "Cuek!"
 
 #: airtime_mvc/application/views/scripts/error/error.phtml:12
 msgid "Looks like the page you were looking for doesn't exist!"
@@ -4262,18 +4230,6 @@ msgstr "Elige los días:"
 #: airtime_mvc/application/views/scripts/playouthistorytemplate/template-contents.phtml:75
 msgid "Add"
 msgstr "Añadir"
-
-msgid "New"
-msgstr "Nuevo"
-
-msgid "Columns"
-msgstr "Columnas"
-
-msgid "Import"
-msgstr "Importar"
-
-msgid "Imported?"
-msgstr "Importado?"
 
 #: airtime_mvc/application/views/scripts/form/add-show-rebroadcast.phtml:4
 msgid "Repeat Days:"
@@ -4372,7 +4328,7 @@ msgstr "No estás monitorizando ninguna carpeta de medios."
 
 #: airtime_mvc/application/views/scripts/form/register-dialog.phtml:1
 msgid "Register Airtime"
-msgstr "Registrar Airtime"
+msgstr "Registrar LibreTIme"
 
 #: airtime_mvc/application/views/scripts/form/register-dialog.phtml:6
 #: airtime_mvc/application/views/scripts/form/support-setting.phtml:5
@@ -4451,7 +4407,7 @@ msgstr "el archivo cumple los criterios"
 
 #: airtime_mvc/application/views/scripts/form/stream-setting-form.phtml:4
 msgid "Stream "
-msgstr "Stream "
+msgstr "Streaming "
 
 #: airtime_mvc/application/views/scripts/form/stream-setting-form.phtml:84
 msgid "Additional Options"
@@ -4600,7 +4556,7 @@ msgstr "Oyentes"
 
 #: airtime_mvc/application/views/scripts/listenerstat/index.phtml:10
 msgid "Stream Data Collection Status"
-msgstr "Estado de la recogida de datos del Stream"
+msgstr "Estado de la recogida de datos del Streaming"
 
 #: airtime_mvc/application/views/scripts/listenerstat/index.phtml:23
 msgid "Monthly Listener Bandwidth Usage"
@@ -4621,7 +4577,7 @@ msgstr "Por favor entra y confirma tu nueva contraseña en los campos que aparec
 
 #: airtime_mvc/application/views/scripts/login/password-restore-after.phtml:3
 msgid "Email Sent!"
-msgstr "¡Email enviado!"
+msgstr "¡Correo enviado!"
 
 #: airtime_mvc/application/views/scripts/login/password-restore-after.phtml:6
 msgid "A password reset link has been sent to your email address. Please check your email and follow the instructions inside to reset your password. If you don't see the email, please check your spam folder!"
@@ -4633,7 +4589,7 @@ msgstr "Restablecer Contraseña"
 
 #: airtime_mvc/application/views/scripts/partialviews/dashboard-sub-nav.php:18
 msgid "Webstreams"
-msgstr ""
+msgstr "Enlaces"
 
 #: airtime_mvc/application/views/scripts/partialviews/header.phtml:4
 msgid "Previous:"
@@ -4645,11 +4601,11 @@ msgstr "Siguiente:"
 
 #: airtime_mvc/application/views/scripts/partialviews/header.phtml:25
 msgid "Source Streams"
-msgstr "Streams fuente"
+msgstr "Streaming fuente"
 
 #: airtime_mvc/application/views/scripts/partialviews/header.phtml:49
 msgid "ON AIR"
-msgstr ""
+msgstr "AL AIRE"
 
 #: airtime_mvc/application/views/scripts/partialviews/header.phtml:50
 msgid "Listen"
@@ -4830,7 +4786,7 @@ msgstr "Arrastra archivos aquí o haz clic para seleccionarlos de tu equipo."
 
 #: airtime_mvc/application/views/scripts/plupload/index.phtml:66
 msgid "Failed"
-msgstr "Fallo"
+msgstr "Fallido"
 
 #: airtime_mvc/application/views/scripts/plupload/index.phtml:67
 msgid "Pending"
@@ -4849,20 +4805,8 @@ msgid "Podcast URL: "
 msgstr "Dirección (URL) del Podcast: "
 
 #: airtime_mvc/application/views/scripts/podcast/podcast.phtml:22
-msgid "Download latest episodes:"
+msgid "Automatically download latest episodes?"
 msgstr "¿Descargar automáticamente los últimos episodios?"
-
-#: airtime_mvc/application/views/scripts/podcast/podcast.phtml:26
-msgid "Scheduling:"
-msgstr "Programación:"
-
-#: airtime_mvc/application/views/scripts/podcast/podcast.phtml:28
-msgid "Generate Smartblock and Playlist"
-msgstr "Generar Bloque y Lista"
-
-#: airtime_mvc/application/views/scripts/podcast/podcast.phtml:30
-msgid "Smartblock and Playlist Generated"
-msgstr ""
 
 #: airtime_mvc/application/views/scripts/podcast/podcast.phtml:26
 msgid "Override album name with podcast name during ingest."
@@ -4874,7 +4818,7 @@ msgstr "Guardar podcast"
 
 #: airtime_mvc/application/views/scripts/podcast/podcast_url_dialog.phtml:8
 msgid "RSS Feed URL:"
-msgstr "URL del Feed RSS:"
+msgstr "Dirección (URL) del Feed RSS:"
 
 #: airtime_mvc/application/views/scripts/podcast/podcast_url_dialog.phtml:17
 msgid "Subscribe"
@@ -4895,7 +4839,7 @@ msgstr "Campos Generales"
 
 #: airtime_mvc/application/views/scripts/podcast/station.phtml:44
 msgid "Link"
-msgstr "Enlace"
+msgstr "Vínculo"
 
 #: airtime_mvc/application/views/scripts/podcast/station.phtml:49
 msgid "iTunes Fields"
@@ -4932,11 +4876,11 @@ msgstr "Ajustes de privacidad"
 #: airtime_mvc/application/views/scripts/podcast/station.phtml:92
 #, php-format
 msgid "For detailed information on what these metadata fields mean, please see the %sRSS specification%s\n or %sApple's podcasting documentation%s."
-msgstr "Para informacin detallada sobre qué signifcan estos campos de metadatos, porfavor consulta la %sRSS specification%s\n o la documentación %sApple's podcasting%s."
+msgstr "Para informacin detallada sobre qué signifcan estos campos de metadatos, porfavor consulta la especificación %sRSS%s\n o la documentación %sApple's podcasting%s."
 
 #: airtime_mvc/application/views/scripts/preference/stream-setting.phtml:2
 msgid "Stream Settings"
-msgstr "Configuración de stream"
+msgstr "Configuración de streaming"
 
 #: airtime_mvc/application/views/scripts/preference/stream-setting.phtml:11
 msgid "Global"
@@ -4965,8 +4909,8 @@ msgid "What"
 msgstr "Qué"
 
 #: airtime_mvc/application/views/scripts/schedule/add-show-form.phtml:14
-msgid "Autoloading Playlist"
-msgstr "Lista Auto-Cargada"
+msgid "Automatic Playlist"
+msgstr "Lista de reproducción automática"
 
 #: airtime_mvc/application/views/scripts/schedule/add-show-form.phtml:18
 msgid "When"
@@ -4974,7 +4918,7 @@ msgstr "Cuándo"
 
 #: airtime_mvc/application/views/scripts/schedule/add-show-form.phtml:32
 msgid "Live Stream Input"
-msgstr "Entrada de stream en vivo"
+msgstr "Entrada de streaming en vivo"
 
 #: airtime_mvc/application/views/scripts/schedule/add-show-form.phtml:36
 msgid "Record & Rebroadcast"
@@ -5010,11 +4954,11 @@ msgstr "Espacio en disco"
 
 #: airtime_mvc/application/views/scripts/user/add-user.phtml:3
 msgid "Manage Users"
-msgstr "Administrar usuarios"
+msgstr "Administrar usuarias"
 
 #: airtime_mvc/application/views/scripts/user/add-user.phtml:10
 msgid "New User"
-msgstr "Nuevo usuario"
+msgstr "Nueva usuaria"
 
 #: airtime_mvc/application/views/scripts/user/add-user.phtml:17
 msgid "id"
@@ -5030,11 +4974,11 @@ msgstr "Apellido"
 
 #: airtime_mvc/application/views/scripts/user/add-user.phtml:21
 msgid "User Type"
-msgstr "Tipo de usuario"
+msgstr "Tipo de usuaria"
 
 #: airtime_mvc/application/views/scripts/webstream/webstream.phtml:30
 msgid "Stream URL:"
-msgstr "Dirección (URL) del stream:"
+msgstr "Dirección (URL) del streaming:"
 
 #: airtime_mvc/application/views/scripts/webstream/webstream.phtml:35
 msgid "Default Length:"
@@ -5042,7 +4986,7 @@ msgstr "Duración por defecto:"
 
 #: airtime_mvc/application/views/scripts/webstream/webstream.phtml:53
 msgid "No webstream"
-msgstr "No hay webstream"
+msgstr "No hay enlace"
 
 #: airtime_mvc/public/setup/rabbitmq-setup.php:76
 msgid "Couldn't connect to RabbitMQ server! Please check if the server is running and your credentials are correct."
