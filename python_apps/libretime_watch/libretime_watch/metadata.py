@@ -27,9 +27,6 @@ from mutagen.mp3 import MP3
 from mutagen.oggvorbis import OggVorbis
 import mutagen
 
-# create empty dictionary 
-#database = {}
-
 #
 # analysing the file
 #
@@ -120,13 +117,13 @@ def analyse_file (filename, database):
     logging.info("mime_check: "+database["mime"]+ " mime: "+type)
 
     # Mp3
-    if database["mime"] in ['audio/mpeg','audio/mp3']:
+    if database["mime"] in ['audio/mpeg','audio/mp3', 'application/octet-stream']:
         f = MP3(filename)
     # Ogg
     elif database["mime"] in ['audio/ogg', 'audio/vorbis', 'audio/x-vorbis', 'application/ogg', 'application/x-ogg']:
         f = OggVorbis(filename)
     else: # 'application/octet-stream'?
-        logging.warning("Unsupported metadata type: {} -- for audio {}".format(database["mime"], filename))
+        logging.warning("Unsupported mime type: {} -- for audio {}".format(database["mime"], filename))
         return False
 
     database["ftype"] = "audioclip"
@@ -163,12 +160,11 @@ def analyse_file (filename, database):
         logging.debug('no album title for '+filename) 
         database["album_title"]= ""
     try:
-        # TODO quizas mi tracknumber con pleca esta mal
         track_number = audio['tracknumber'][0]
+        # TODO are slashes allowed in this format?
         if "/" in track_number:
             track_number = track_number.split("/")[0]
-        database["track_number"]= track_number
-        
+        database["track_number"]= int(track_number)
     except StandardError, err:
         logging.debug('no track_number for '+filename) 
         database["track_number"]= 0
@@ -189,10 +185,10 @@ def analyse_file (filename, database):
     database["cuein"], database["cueout"] = cue_points (filename, database["cuein"], database["cueout"])
     # mark as silan checked
     database["silan_check"] = "t"
-    # use mutage to get better mime 
-    if  f.mime:
+    # use mutage to get better mime
+    if f.mime:
         database["mime"] = f.mime[0]
-    if database["mime"] in ["audio/mpeg", 'audio/mp3']:
+    if database["mime"] in ["audio/mpeg", 'audio/mp3', 'application/octet-stream']:
         if f.info.mode == 3:
             database["channels"] = 1
         else:

@@ -141,6 +141,7 @@ def watch (dir_id, directory):
                 +" and directory = "+str(database["directory"]))
           except: 
             logging.warning ("I can't SELECT count(*) ... from cc_files")
+#            continue
           
           row = cur.fetchone()
           # is there already a record
