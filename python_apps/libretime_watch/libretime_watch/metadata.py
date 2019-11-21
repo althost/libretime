@@ -27,6 +27,8 @@ from mutagen.mp3 import MP3
 from mutagen.oggvorbis import OggVorbis
 import mutagen
 from mutagen.id3 import ID3NoHeaderError
+from mutagen.mp3 import HeaderNotFoundError
+from mutagen.oggvorbis import OggVorbisHeaderError
 
 #
 # analysing the file
@@ -98,6 +100,10 @@ def md5_hash(filename):
             m.update(data)
         return m.hexdigest()
 
+def strim(varchar, length):
+    """trim string to fit database varchar length."""
+    return varchar[:length]
+
 def analyse_file (filename, database):
     """This method analyses the file and returns analyse_ok 
       It's filling the database dictionary with metadata read from
@@ -113,7 +119,7 @@ def analyse_file (filename, database):
     mime = MimeTypes()
     type, a = mime.guess_type(filename)
     #
-    logging.info("mime_check: "+database["mime"]+ " mime: "+type)
+    logging.info("mime_check: {} | mime: {}".format(database["mime"], type))
 
     database["ftype"] = "audioclip"
     database["filesize"] = os.path.getsize(filename) 
@@ -127,49 +133,72 @@ def analyse_file (filename, database):
         try:
             audio = EasyID3(filename)
             f = MP3(filename)
-        except ID3NoHeaderError:
+        except (ID3NoHeaderError, HeaderNotFoundError) as e:
             logging.warning("MP3 without Metadata: {}".format(filename))
             return False
     # Ogg
     elif database["mime"] in ['audio/ogg', 'audio/vorbis', 'audio/x-vorbis', 'application/ogg', 'application/x-ogg']:
-        audio = OggVorbis(filename)
-        f = audio
-    else: # 'application/octet-stream'?
+        try:
+            audio = OggVorbis(filename)
+            f = audio
+        except OggVorbisHeaderError:
+            logging.warning("OGG without Metadata: {}".format(filename))
+            return False
+    else:
         logging.warning("Unsupported mime type: {} -- for audio {}".format(database["mime"], filename))
         return False
 
     try:
-        database["track_title"]=audio['title'][0]
+        track_title = audio['title'][0]
     except:
         logging.warning("no title ID3 for {}".format(filename))
-        database["track_title"]=filename.split("/")[-1] # default title to filename
+        # default title to filename
+        track_title=filename.split("/")[-1]
+    finally:
+        track_title = strim(track_title, 512)
+        database["track_title"]= track_title
+
     try:
-        database["artist_name"]=audio['artist'][0]
+        artist_name = audio['artist'][0]
+        artist_name = strim(artist_name, 512)
+        database["artist_name"] = artist_name
     except StandardError, err:
         logging.warning('no artist ID3 for '+filename) 
-        database["artist_name"]= ""       
+        database["artist_name"]= ""
+    
     try:
-        database["genre"]=audio['genre'][0]
+        genre = audio['genre'][0]
+        genre = strim(genre, 64)
+        database["genre"] = genre
     except StandardError, err:
         logging.debug('no genre ID3 for '+filename) 
         database["genre"]= ""
+
     try:
-        database["album_title"]=audio['album'][0]
+        album_title = audio['album'][0]
+        album_title = strim(album_title, 512)
+        database["album_title"] = album_title
     except StandardError, err:
         logging.debug('no album title for '+filename) 
         database["album_title"]= ""
+
     try:
         track_number = audio['tracknumber'][0]
+        if "/" in track_number: 
         # TODO are slashes allowed in this format?
-        if "/" in track_number:
             track_number = track_number.split("/")[0]
-        database["track_number"]= int(track_number)
+        track_number = int(track_number)
+        if track_number > 2147483647:
+        # make sure it doesn't exceed Postgres maximum integer value
+            track_number = 0
+        database["track_number"]= track_number
     except StandardError, err:
         logging.debug('no track_number for '+filename) 
         database["track_number"]= 0
     
     database["bit_rate"] = f.info.bitrate
     database["sample_rate"] = f.info.sample_rate
+
     if hasattr(f.info, "length"):
         #Converting the length in seconds (float) to a formatted time string
         track_length = datetime.timedelta(seconds=f.info.length)
@@ -179,11 +208,13 @@ def analyse_file (filename, database):
         replaygain = replay_gain(filename)
         if replaygain: #...
             database["replay_gain"] = replaygain
+
     database["cuein"]= "00:00:00.0"
     # get better (?) cuein, cueout using silan
     database["cuein"], database["cueout"] = cue_points (filename, database["cuein"], database["cueout"])
     # mark as silan checked
     database["silan_check"] = "t"
+
     # use mutage to get better mime
     if f.mime:
         database["mime"] = f.mime[0]
@@ -194,4 +225,5 @@ def analyse_file (filename, database):
             database["channels"] = 2
     else:
         database["channels"] = f.info.channels
+
     return True
