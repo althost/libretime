@@ -2540,12 +2540,20 @@ msgid "Must wait at least 1 hour to rebroadcast"
 msgstr "Debes esperar al menos 1 hora para reprogramar"
 
 #: airtime_mvc/application/forms/AddShowAutoPlaylist.php:18
-msgid "Auto Schedule Playlist ?"
-msgstr "¿Auto Programar Lista?"
+msgid "Add Autoloading Playlist ?"
+msgstr "¿Añadir Lista Automática?"
+
+#: airtime_mvc/application/views/scripts/form/add-show-autoplaylist.phtml:14 
+msgid "Autoloading playlists' contents are added to shows one hour before the show airs. <a target='_blank' href='http://libretime.org/manual/calendar/#autoloading-playlist'>More information</a>" 
+msgstr "Las Listas Automáticas se rellenan de contenido una hora antes que el programa salga al aire. <a target='_blank' href='http://libretime.org/manual/calendar/#autoloading-playlist'>Más información</a>" 
 
 #: airtime_mvc/application/forms/AddShowAutoPlaylist.php:25
 msgid "Select Playlist"
 msgstr "Seleccionar Lista"
+
+#: airtime_mvc/application/forms/AddShowAutoPlaylist.php:32 
+msgid "Repeat Playlist Until Show is Full ?" 
+msgstr "¿Repetir la Lista hasta llenar el Programa?"  
 
 #: airtime_mvc/application/forms/AddShowLiveStream.php:11
 #, php-format
@@ -2731,6 +2739,10 @@ msgstr "'%value%' no concuerda con el formato de tiempo 'HH:mm'"
 #: airtime_mvc/application/forms/AddShowWhen.php:22
 msgid "Start Time:"
 msgstr "Hora de inicio:"
+
+#: airtime_mvc/application/forms/AddShowWhen.php:24
+msgid "Now"
+msgstr "Ahora"
 
 #: airtime_mvc/application/forms/AddShowWhen.php:37
 msgid "In the Future:"
@@ -4805,8 +4817,22 @@ msgid "Podcast URL: "
 msgstr "Dirección (URL) del Podcast: "
 
 #: airtime_mvc/application/views/scripts/podcast/podcast.phtml:22
-msgid "Automatically download latest episodes?"
-msgstr "¿Descargar automáticamente los últimos episodios?"
+msgid "Download latest episodes:"
+msgstr "¿Descargar automáticamente últimos episodios?"
+
+#: airtime_mvc/application/views/scripts/podcast/podcast.phtml:26
+msgid "Scheduling:"
+msgstr "Para suscribirse al Podcast:"
+
+#: airtime_mvc/application/views/scripts/podcast/podcast.phtml:28
+msgid "Generate Smartblock and Playlist"
+msgstr "Generar Bloque Inteligente y Lista."
+
+#: airtime_mvc/application/views/scripts/podcast/podcast.phtml:30
+msgid "Smartblock and Playlist Generated"
+msgstr "Creaste un Bloque Inteligente y una Lista que lo contiene. \n"
+"Luego, al crear un Programa en el Calendario, puedes asociar esta última como Lista Automática. \n"
+"Así, nos suscribimos a este Podcast en ese horario."
 
 #: airtime_mvc/application/views/scripts/podcast/podcast.phtml:26
 msgid "Override album name with podcast name during ingest."
@@ -4908,9 +4934,9 @@ msgstr "Actualizar programa"
 msgid "What"
 msgstr "Qué"
 
-#: airtime_mvc/application/views/scripts/schedule/add-show-form.phtml:14
-msgid "Automatic Playlist"
-msgstr "Lista de reproducción automática"
+#: airtime_mvc/application/views/scripts/schedule/add-show-form.phtml:28
+msgid "Autoloading Playlist"
+msgstr "Lista Automática"
 
 #: airtime_mvc/application/views/scripts/schedule/add-show-form.phtml:18
 msgid "When"
@@ -4937,7 +4963,7 @@ msgstr "Estilo"
 #: airtime_mvc/application/views/scripts/showbuilder/index.phtml:27
 #: airtime_mvc/application/views/scripts/showbuilder/index.phtml:28
 msgid "Scheduled Shows"
-msgstr "Programas Agendados"
+msgstr "Programación"
 
 #: airtime_mvc/application/views/scripts/systemstatus/index.phtml:25
 #, php-format
