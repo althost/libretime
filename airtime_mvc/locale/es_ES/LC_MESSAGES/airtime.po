@@ -1,5 +1,5 @@
-# LANGUAGE (xx_XX) translation for Airtime.
-# Copyright (C) 2012 Sourcefabric
+# LANGUAGE (es_CL) translation for Airtime.
+# Copyleft (CC) 2019 LibreTime Community
 # This file is distributed under the same license as the Airtime package.
 #
 # Translators:
@@ -7,12 +7,13 @@
 # Maria Ituarte <maria.ituarte@sourcefabric.org>, 2015
 # Sourcefabric <contact@sourcefabric.org>, 2012
 # Víctor Carranza <victor.carranza@sourcefabric.org>, 2014
+# Roberto Soto <webmaster@numerica.cl>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Libretime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-04 16:23+0000\n"
-"PO-Revision-Date: 2019-11-04 15:51+0000\n"
+"PO-Revision-Date: 2019-11-25 15:51+0000\n"
 "Last-Translator: Roberto Soto <webmaster@numerica.cl>\n"
 "Language-Team: Castilla (Wallmapu)\n"
 "Language: es_CL\n"
@@ -676,7 +677,7 @@ msgstr "Mi Perfil"
 
 #: airtime_mvc/application/configs/navigation.php:89
 msgid "Users"
-msgstr "Usuarios"
+msgstr "Usuarias"
 
 #: airtime_mvc/application/configs/navigation.php:96
 msgid "Streams"
@@ -729,7 +730,7 @@ msgstr "Manual para el usuario"
 
 #: airtime_mvc/application/configs/navigation.php:200
 msgid "Get Help Online"
-msgstr "Obten ayuda en línea"
+msgstr "Obtén ayuda en línea"
 
 #: airtime_mvc/application/configs/navigation.php:210
 msgid "What's New?"
@@ -926,8 +927,8 @@ msgid "Copy of %s"
 msgstr "Copia de %s"
 
 #: airtime_mvc/application/controllers/ListenerstatController.php:51
-msgid "Please make sure admin user/password is correct on System->Streams page."
-msgstr "Verifica que la contraseña del usuario admin. esté correcta en Configuración -> Streaming"
+msgid "Please make sure admin user/password is correct on Settings->Streams page."
+msgstr "Verifica que la contraseña de la usuaria admin esté correcta en Configuración -> Streaming"
 
 #: airtime_mvc/application/controllers/LocaleController.php:25
 #: airtime_mvc/application/layouts/scripts/audio-player.phtml:5
@@ -937,7 +938,7 @@ msgstr "Reproductor de audio"
 #: airtime_mvc/application/controllers/LocaleController.php:26
 #: airtime_mvc/application/views/scripts/error/error-500.phtml:11
 msgid "Something went wrong!"
-msgstr "¡Algo salió mal!"
+msgstr "Tenemos un error... (No te preocupes, no es tu culpa.) \n Vuelve a intentarlo más tarde."
 
 #: airtime_mvc/application/controllers/LocaleController.php:28
 msgid "Recording:"
@@ -953,7 +954,7 @@ msgstr "Streaming en vivo"
 
 #: airtime_mvc/application/controllers/LocaleController.php:31
 msgid "Nothing Scheduled"
-msgstr "Nada programado"
+msgstr "No hay nada programado"
 
 #: airtime_mvc/application/controllers/LocaleController.php:32
 msgid "Current Show:"
@@ -2024,8 +2025,8 @@ msgstr "Recortar exceso de programas"
 msgid "Remove selected scheduled items"
 msgstr "Eliminar los ítems programados seleccionados"
 
-#: airtime_mvc/application/controllers/LocaleController.php:313
-msgid "Jump to the current playing track"
+#: airtime_mvc/application/controllers/LocaleController.php:331
+msgid "Jump to Current"
 msgstr "Saltar a la pista en reproducción actual"
 
 #: airtime_mvc/application/controllers/LocaleController.php:314
@@ -2543,7 +2544,7 @@ msgstr "Debes esperar al menos 1 hora para reprogramar"
 msgid "Add Autoloading Playlist ?"
 msgstr "¿Añadir Lista Automática?"
 
-#: airtime_mvc/application/views/scripts/form/add-show-autoplaylist.phtml:14 
+#: airtime_mvc/application/views/scripts/form/add-show-autoplaylist.phtml:14
 msgid "Autoloading playlists' contents are added to shows one hour before the show airs. <a target='_blank' href='http://libretime.org/manual/calendar/#autoloading-playlist'>More information</a>" 
 msgstr "Las Listas Automáticas se rellenan de contenido una hora antes que el programa salga al aire. <a target='_blank' href='http://libretime.org/manual/calendar/#autoloading-playlist'>Más información</a>" 
 
@@ -2840,7 +2841,7 @@ msgstr "Apellido:"
 #: airtime_mvc/application/forms/RegisterAirtime.php:51
 #: airtime_mvc/application/forms/SupportSettings.php:43
 msgid "Email:"
-msgstr "Correo e°"
+msgstr "E-mail:"
 
 #: airtime_mvc/application/forms/AddUser.php:75
 #: airtime_mvc/application/forms/EditUser.php:93
@@ -3005,8 +3006,16 @@ msgid "Default Fade Out (s):"
 msgstr "Fade Out preseterminado (s):"
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:105
-msgid "Podcast Album Override"
-msgstr "Sobrescribir el álbum del podcast"
+msgid "Overwrite Podcast Episode Metatags"
+msgstr "Sobrescribir metadatos de los episodios del Podcast"
+
+#: airtime_mvc/application/forms/GeneralPreferences.php:120
+msgid "Generate a smartblock and a playlist upon creation of a new podcast"
+msgstr "Generar un Bloque Inteligente dentro de una Lista al crear un nuevo podcast"
+
+#: airtime_mvc/application/forms/GeneralPreferences.php:126
+msgid "If this option is enabled, a new smartblock and playlist matching the newest track of a podcast will be generated immediately upon creation of a new podcast. Note that the \"Overwrite Podcast Episode Metatags\" feature must also be enabled in order for smartblocks to reliably find episodes."
+msgstr "Si esta opción está habilitada, al crear un nuevo podcast, automáticamente se generará una Lista conteniendo un Bloque Inteligente, el cual selecciona el último episodio. Luego, la lista puede asociarse a un Programa como 'Lista Automática', así la suscripción al Podcast queda automatizada. - Nótese que para que los Bloques Inteligentes encuentren los episodios, también hay que habilitar la opción \"Sobrescribir metadatos de los episodio del Podcast\"."
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:107
 #: airtime_mvc/application/forms/GeneralPreferences.php:125
@@ -3019,11 +3028,11 @@ msgid "Enabled"
 msgstr "Activado"
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:111
-msgid "Enabling this means that podcast tracks will always contain the podcast name in their album field."
-msgstr "Habilitar esto significa que las pistas del podcast siempre contendrán el nombre del podcast en su campo de álbum. Nótese que se recomienda habilitar esta función, para asegurar una buena calendarización de los episodios por medio de Bloques Inteligentes."
+msgid "Enabling this feature will cause podcast episode tracks to have their Artist, Title, and Album metatags set from podcast feed values. Note that enabling this feature is recommended in order to ensure reliable scheduling of episodes via smartblocks."
+msgstr "Habilitar esto significa que a los audios del Podcast se les configure su Artista, Título y Álbum, desde los datos obtenidos por la sindicación. Nótese que se recomienda habilitar esta función, para asegurar una buena calendarización de los episodios por medio de Bloques Inteligentes."
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:122
-msgid "Public Airtime API"
+msgid "Public LibreTime API"
 msgstr "API Pública de LibreTime"
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:123
@@ -3032,7 +3041,7 @@ msgstr "Requerido para el widget de programación incrustado"
 
 #: airtime_mvc/application/forms/GeneralPreferences.php:129
 msgid ""
-"Enabling this feature will allow Airtime to provide schedule data\n"
+"Enabling this feature will allow LibreTime to provide schedule data\n"
 "                                            to external widgets that can be embedded in your website."
 msgstr ""
 "Habilitar esta función permite a Libretime proporcionar datos de programación\n"
@@ -3346,6 +3355,18 @@ msgstr "Dinámico"
 #: airtime_mvc/application/forms/SmartBlockCriteria.php:299
 msgid "Allow Repeated Tracks:"
 msgstr "Permitir Pistas Repetidas:"
+
+#: airtime_mvc/application/forms/SmartBlockCriteria.php:453
+msgid "Allow last track to exceed time limit:"
+msgstr "Permitir que el último audio exceda el tiempo límite:"
+
+#: airtime_mvc/application/views/scripts/playlist/update.phtml:25
+msgid "</br>This is only a preview of possible content generated by the smart block based upon the above criteria."
+msgstr "</br>Esto es solamente una previsualización del contenido generado por el Bloque Inteligente, de acuerdo a los criterios de más arriba."
+
+#: airtime_mvc/application/views/scripts/form/smart-block-criteria.phtml:82
+msgid "Advanced options"
+msgstr "Opciones avanzadas"
 
 #: airtime_mvc/application/forms/SmartBlockCriteria.php:308
 msgid "Sort Tracks:"
@@ -4243,6 +4264,18 @@ msgstr "Elige los días:"
 msgid "Add"
 msgstr "Añadir"
 
+msgid "New"
+msgstr "Nuevo"
+
+msgid "Columns"
+msgstr "Columnas"
+
+msgid "Import"
+msgstr "Importar"
+
+msgid "Imported?"
+msgstr "¿Importado?"
+
 #: airtime_mvc/application/views/scripts/form/add-show-rebroadcast.phtml:4
 msgid "Repeat Days:"
 msgstr "Días de repetición:"
@@ -4265,8 +4298,13 @@ msgid "Forgot your password?"
 msgstr "¿Olvidaste tu contraseña?"
 
 #: airtime_mvc/application/views/scripts/form/player.phtml:12
-msgid "Customize the player by configuring the options below. When you are done,\ncopy the embeddable code below and paste it into your website's HTML."
-msgstr "Personaliza el reproductor configurando las opciones siguientes. Cuando hayas terminado,\n copia el código incrustado más abajo y pégalo en el HTML de tu sitio web."
+msgid ""
+"Customize the player by configuring the options below. When you are done,\n"
+"            copy the embeddable code below and paste it into your website's HTML."
+msgstr ""
+"Personaliza el reproductor configurando las opciones siguientes. Cuando hayas terminado,\n"
+"            copia el código incrustado más abajo y pégalo en el HTML de tu sitio web."
+
 
 #: airtime_mvc/application/views/scripts/form/preferences.phtml:6
 msgid "TuneIn Settings"
@@ -4901,8 +4939,12 @@ msgstr "Ajustes de privacidad"
 
 #: airtime_mvc/application/views/scripts/podcast/station.phtml:92
 #, php-format
-msgid "For detailed information on what these metadata fields mean, please see the %sRSS specification%s\n or %sApple's podcasting documentation%s."
-msgstr "Para informacin detallada sobre qué signifcan estos campos de metadatos, porfavor consulta la especificación %sRSS%s\n o la documentación %sApple's podcasting%s."
+msgid ""
+"For detailed information on what these metadata fields mean, please see the %sRSS specification%s\n"
+"                    o la documentación %sde Podcasts de Apple%s."
+msgstr ""
+"Para informacin detallada sobre qué signifcan estos campos de metadatos, porfavor consulta la especificación %sRSS%s\n"
+"                    or %sApple's podcasting documentation%s."
 
 #: airtime_mvc/application/views/scripts/preference/stream-setting.phtml:2
 msgid "Stream Settings"
@@ -4934,7 +4976,7 @@ msgstr "Actualizar programa"
 msgid "What"
 msgstr "Qué"
 
-#: airtime_mvc/application/views/scripts/schedule/add-show-form.phtml:28
+#: airtime_mvc/application/views/scripts/schedule/add-show-form.phtml:14
 msgid "Autoloading Playlist"
 msgstr "Lista Automática"
 
@@ -4968,7 +5010,7 @@ msgstr "Programación"
 #: airtime_mvc/application/views/scripts/systemstatus/index.phtml:25
 #, php-format
 msgid "%s Version"
-msgstr "%s Versión"
+msgstr "Versión %s"
 
 #: airtime_mvc/application/views/scripts/systemstatus/index.phtml:29
 msgid "Service"
@@ -5038,14 +5080,3 @@ msgstr "Clic 'Añadir' para crear uno."
 msgid "You haven't added any podcasts"
 msgstr "No has añadido ningún podcast"
 
-#~ msgid "This version will soon be obsolete."
-#~ msgstr "Esta versión pronto quedará obsoleta."
-
-#~ msgid "This version is no longer supported."
-#~ msgstr "Esta versión ya no cuenta con soporte."
-
-#~ msgid "Please upgrade to "
-#~ msgstr "Por favor actualiza a"
-
-#~ msgid "please put in a time in seconds '00 (.0)'"
-#~ msgstr "por favor introduce un tiempo en segundos '00 (.0)'"
